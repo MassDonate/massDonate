@@ -69,14 +69,6 @@ router.post('/info', function(req, res, next) {
   res.render('thanks');
 });
 
-function isValidJson(json) {
-    try {
-        JSON.parse(json);
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
 
 router.post('/moreInfo',function(req,res,next){
     console.log(req.body)
