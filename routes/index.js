@@ -81,7 +81,7 @@ function isValidJson(json) {
 router.post('/moreInfo',function(req,res,next){
     console.log(req.body)
 
-    var uncode = decodeURI(req);
+    var uncode = decodeURIComponent(req);
     console.log(uncode);
     /*console.log(isValidJson(req.body));
     var donate = req.body.job;
