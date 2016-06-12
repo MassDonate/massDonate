@@ -69,17 +69,27 @@ router.post('/info', function(req, res, next) {
   res.render('thanks');
 });
 
+function isValidJson(json) {
+    try {
+        JSON.parse(json);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
 
 router.post('/moreInfo',function(req,res,next){
     var donate = req.body.job;
     var items = req.body.donationItems;
     var canDropOff = req.body.canDropOff;
     var needsPickup = req.body.needsPickup;
+    console.log(req);
     console.log("donate"+donate);
     console.log("items"+items)
     console.log("canDrop"+canDropOff);
     console.log("needsPickup"+needsPickup);
-    console.log(req);
+    console.log(typeof req)
+    console.log(isValidJson(req));
     res.send("DEEZ NUTS");
 });
 module.exports = router;
