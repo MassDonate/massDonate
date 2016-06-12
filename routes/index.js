@@ -18,7 +18,7 @@ router.post('/info', function(req, res, next) {
   var email = req.body.email;
   var fb = req.body.fb;
   var city = req.body.city;
-  db.defaults({ users: [], cities: [] })
+  db.defaults({ users: [], cities: [] , volunteers:[], donators:[]})
   .value()
 
   db.get('users')
@@ -32,7 +32,7 @@ router.post('/info', function(req, res, next) {
   db.get('cities')
   .find({name:city})
   .value()['people'].push({name:name})
-  
+  console.log(db.get('cities').find({name:city}).value()['people'][0]);
   res.render('thanks');
 });
 
