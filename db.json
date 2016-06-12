@@ -1,0 +1,38 @@
+{
+  "users": [
+    {
+      "name": "gagan kaushki",
+      "phone": "4088131700",
+      "city": "cupertino",
+      "address": "21618 Rosario Ave",
+      "email": "socketphys@gmail.com",
+      "fb": "asd"
+    },
+    {
+      "name": "pagan kasha",
+      "phone": "asd",
+      "city": "asd",
+      "address": "asd",
+      "email": "asd",
+      "fb": "asd"
+    }
+  ],
+  "cities": [
+    {
+      "name": "cupertino",
+      "people": [
+        {
+          "name": "gagan kaushki",
+          "donate": "donate",
+          "address": "21618 Rosario Ave"
+        }
+      ]
+    },
+    {
+      "name": "asd",
+      "people": []
+    }
+  ],
+  "volunteers": [],
+  "donators": []
+}

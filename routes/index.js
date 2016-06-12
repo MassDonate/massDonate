@@ -67,12 +67,13 @@ router.post('/info', function(req, res, next) {
 
 
 router.post('/moreInfo',function(req,res,next){
-    console.log(req.body)
-    var string = req.body.toString();
-     string = string.substring(string.indexOf("{"),string.lastIndexOf(":")-1);
-
-    var donate = string.job;
-    var email = string.email;
+    
+    var string = Object.keys(req.body)[0];
+    console.log(string + " AD")
+    console.log(string)
+    var obj = JSON.parse(string)
+    var donate = obj.job;
+    var email = obj.email;
     console.log(email)
     var person = db.get('users')
     .find({email:email})
@@ -80,17 +81,17 @@ router.post('/moreInfo',function(req,res,next){
 
     db.get('cities')
     .find({name:person['city']})
-    .value()['people'].push({name:name,donate:donate,address:person['address']})
-    console.log(db.get('cities').find({name:city}).value()['people'][0]);
+    .value()['people'].push({name:person['name'],donate:donate,address:person['address']})
+    console.log(db.get('cities').find({name:person['city']}).value()['people'][0]);
 
     res.send("success");
 });
 
 router.post('/sendInfo',function(req,res,next){
     var string = req.body.toString();
-    string = string.substring(string.indexOf("{"),string.lastIndexOf(":")-1);
+    
     var obj = JSON.parse(string);
-    var email = string.email;
+    var email = obj.email;
     console.log(email);
     var person = db.get('users')
     .find({email:email})
