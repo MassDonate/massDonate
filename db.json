@@ -1,25 +1,18 @@
 {
   "users": [
     {
-      "name": "Aditya Mohanasf",
-      "phone": "afsd",
-      "address": "asfads",
-      "email": "asdfasd",
+      "name": "asd",
+      "phone": "asd",
+      "city": "asd",
+      "address": "asd",
+      "email": "asd",
       "fb": "asdfasd"
-    },
+    }
+  ],
+  "cities": [
     {
-      "name": "adjfla",
-      "phone": "sdkfs",
-      "address": "dfksd",
-      "email": "dfks",
-      "fb": "sdfs"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "address": "",
-      "email": "",
-      "fb": ""
+      "name": "asd",
+      "people": []
     }
   ]
 }
