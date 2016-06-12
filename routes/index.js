@@ -76,13 +76,11 @@ router.post('/moreInfo',function(req,res,next){
     .value();
 
     db.get('cities')
-    .find({name:person['city'})
+    .find({name:person['city']})
     .value()['people'].push({name:name,donate:donate,address,person['address']})
     console.log(db.get('cities').find({name:city}).value()['people'][0]);
 
-    
-    
-    res.send("DEEZ NUTS");
+    res.send("success");
 });
 
 router.post('/sendInfo',function(req,res,next){
@@ -101,8 +99,5 @@ router.post('/sendInfo',function(req,res,next){
     }else{
         res.send({job:null});
     }
-
-    
-
 });
 module.exports = router;
