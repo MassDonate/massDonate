@@ -24,13 +24,24 @@
         padding: 0;
       }
     </style>
+    <script>
+      $('a').click(function() {
+          var href = $.attr(this, 'href');
+          $root.animate({
+              scrollTop: $(href).offset().top
+          }, 3000, function () {
+              window.location.hash = href;
+          });
+          return false;
+      });
+    </script>
   </head>
   <body>
     <nav>
       <div class="navbar-wrapper">
         <a href="#" class="brand-logo">MassDonate</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="about.html">About</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="contact" >Sign Up</a></li>
           <li><a href="disasters">Disasters</a></li>
         </ul>
