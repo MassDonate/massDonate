@@ -22,9 +22,9 @@ function poll(){
 
 router.get('/check',function(req,res,next){
     if(bool){
-        return {bool:bool, newestDisaster:newestDisaster};
+        res.send({bool:bool, newestDisaster:newestDisaster});
     }else{
-        return {bool:bool, newestDisaster:null};
+        res.send({bool:bool, newestDisaster:null});
     }
     bool=false;
 });
@@ -71,8 +71,10 @@ router.post('/info', function(req, res, next) {
 
 
 router.post('/moreInfo',function(req,res,next){
-    res.send("ok")
-
-
+    var donate = req.job;
+    var items = req.donationItems;
+    var canDropOff = req.canDropOff;
+    var needsPickup = req.needsPickup;
+    res.send("oooookkkkkk");
 });
 module.exports = router;
