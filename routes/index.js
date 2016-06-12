@@ -7,27 +7,23 @@ router.get('/', function(req, res, next) {
   res.render('index');
 });
 
-
 router.get('/contact',function(req,res,next){
     res.render('contact');
 });
 router.post('/info', function(req, res, next) {
-  
+
   var name = req.body.name;
   var phone = req.body.phone;
   var address = req.body.address;
   var email = req.body.email;
-  var fb = req.body.fb; 
+  var fb = req.body.fb;
   db.defaults({ users: [] })
   .value()
-  
+
   db.get('users')
   .push({ name: name, phone: phone, address: address, email: email, fb:fb})
   .value()
-
-    
-
-  res.render('index');
+  res.render('thanks');
 });
 
 module.exports = router;
