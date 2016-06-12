@@ -5,10 +5,9 @@ const db = low('db.json')
 var request = require('request');
 /* GET home page. */
 var bool = false;
-var newestDisaster= "asd"
-setInterval(poll() 
-
-, 300000);
+var newestDisaster= "asd";
+poll();
+setInterval(poll() , 300000);
 
 function poll(){
    request('http://api.rwlabs.org:80/v1/disasters?limit=1&fields%5Binclude%5D%5B%5D=country&sort%5B%5D=date%3Adesc', function (error, response, body) {
