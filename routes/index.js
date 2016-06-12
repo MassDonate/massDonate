@@ -2,7 +2,33 @@ var express = require('express');
 var router = express.Router();
 var low = require('lowdb')
 const db = low('db.json')
+var request = require('request');
 /* GET home page. */
+var bool = false;
+var newestDisaster= "asd"
+setInterval(poll()) }
+
+, 300000);
+
+function poll(){
+   request('http://api.rwlabs.org:80/v1/disasters?limit=1&fields%5Binclude%5D%5B%5D=country&sort%5B%5D=date%3Adesc', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+        if(body!=newestDisaster){ // Show the HTML for the Google homepage.
+            bool = true
+            newestDisaster = body;
+        }
+    }
+   })
+}
+
+router.get('/check',function(req,res,next){
+    if(bool){
+        return {bool:bool, newestDisaster:newestDisaster};
+    }else{
+        return {bool:bool, newestDisaster:null};
+    }
+
+});
 router.get('/', function(req, res, next) {
   res.render('index');
 });
@@ -46,7 +72,7 @@ router.post('/info', function(req, res, next) {
 
 
 router.post('/moreInfo',function(req,res,next){
-    console.log(req.body);
+    res.send("ok")
 
 
 });
