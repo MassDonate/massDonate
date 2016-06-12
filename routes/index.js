@@ -79,15 +79,17 @@ function isValidJson(json) {
 }
 
 router.post('/moreInfo',function(req,res,next){
+    console.log(req.body);
     var donate = req.body.job;
-    var items = req.body.donationItems;
-    var canDropOff = req.body.canDropOff;
-    var needsPickup = req.body.needsPickup;
+    console.log(donate);
+    /*var items = requ.donationItems;
+    var canDropOff = requ.canDropOff;
+    var needsPickup = requ.needsPickup;
     console.log(req);
     console.log("donate"+donate);
     console.log("items"+items)
     console.log("canDrop"+canDropOff);
-    console.log("needsPickup"+needsPickup);
+    console.log("needsPickup"+needsPickup);*/
     console.log(typeof req)
     console.log(isValidJson(req));
     res.send("DEEZ NUTS");
