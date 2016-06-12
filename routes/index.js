@@ -71,6 +71,7 @@ router.post('/moreInfo',function(req,res,next){
 
     var donate = req.body.job;
     var email = req.body.email;
+    console.log(email
     var person = db.get('users')
     .find({email:email})
     .value();
@@ -84,7 +85,10 @@ router.post('/moreInfo',function(req,res,next){
 });
 
 router.post('/sendInfo',function(req,res,next){
-    var email = req.body.email;
+    var string = req.body.toString();
+    string = string.substring(string.indexOf("{"),string.lastIndexOf(":")-1);
+    var obj = JSON.parse(string);
+    var email = string.email;
     console.log(email);
     var person = db.get('users')
     .find({email:email})
