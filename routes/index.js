@@ -62,10 +62,6 @@ router.post('/info', function(req, res, next) {
   .push({name:city,people:[]})
   .value()
 
-  db.get('cities')
-  .find({name:city})
-  .value()['people'].push({name:name})
-  console.log(db.get('cities').find({name:city}).value()['people'][0]);
   res.render('thanks');
 });
 
@@ -74,11 +70,39 @@ router.post('/moreInfo',function(req,res,next){
     console.log(req.body)
 
     var donate = req.body.job;
+    var email = req.body.email;
+    var person = db.get('users')
+    .find({email:email})
+    .value();
 
-    var items = req.body.donationItems;
-    var canDropOff = req.body.canDropOff;
-    var needsPickup = req.body.needsPickup;
+    db.get('cities')
+    .find({name:person['city'})
+    .value()['people'].push({name:name,donate:donate,address,person['address']})
+    console.log(db.get('cities').find({name:city}).value()['people'][0]);
+
+    
     
     res.send("DEEZ NUTS");
+});
+
+router.post('/sendInfo',function(req,res,next){
+    var email = req.body.email;
+    var person = db.get('users')
+    .find({email:email})
+    .value();
+
+     var job = db.get('cities')
+    .find({name:person['city'})
+    .value()['people'].find({name:person['name']})['donate']
+ console.log(db.get('cities').find({name:city}).value()['people'][0].find({name:name})['donate'][0]);
+
+    if( job=='volunteer'){
+        res.send(db.get('cities').find({name:person['city']}).value())
+    }else{
+        res.send({job:null});
+    }
+
+    
+
 });
 module.exports = router;
