@@ -26,7 +26,7 @@ router.get('/check',function(req,res,next){
     }else{
         return {bool:bool, newestDisaster:null};
     }
-
+    bool=false;
 });
 router.get('/', function(req, res, next) {
   res.render('index');
