@@ -73,23 +73,12 @@ router.post('/info', function(req, res, next) {
 router.post('/moreInfo',function(req,res,next){
     console.log(req.body)
 
-    var uncode = decodeURIComponent(req);
-    console.log(uncode);
-    /*console.log(isValidJson(req.body));
     var donate = req.body.job;
-    console.log(donate);
 
-    var items = requ.donationItems;
-    var canDropOff = requ.canDropOff;
-    var needsPickup = requ.needsPickup;
-    console.log(req);
-    console.log("donate"+donate);
-    console.log("items"+items)
-    console.log("canDrop"+canDropOff);
-    console.log("needsPickup"+needsPickup);
-    console.log(typeof req)
-    console.log(isValidJson(req));
-    */
+    var items = req.body.donationItems;
+    var canDropOff = req.body.canDropOff;
+    var needsPickup = req.body.needsPickup;
+    
     res.send("DEEZ NUTS");
 });
 module.exports = router;
