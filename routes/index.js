@@ -79,20 +79,25 @@ function isValidJson(json) {
 }
 
 router.post('/moreInfo',function(req,res,next){
-    console.log(req);
-    console.log(req.body);
+    console.log(req.body)
+
+    var uncode = decodeURI(req);
+    console.log(uncode);
+    /*console.log(isValidJson(req.body));
     var donate = req.body.job;
     console.log(donate);
-    /*var items = requ.donationItems;
+
+    var items = requ.donationItems;
     var canDropOff = requ.canDropOff;
     var needsPickup = requ.needsPickup;
     console.log(req);
     console.log("donate"+donate);
     console.log("items"+items)
     console.log("canDrop"+canDropOff);
-    console.log("needsPickup"+needsPickup);*/
+    console.log("needsPickup"+needsPickup);
     console.log(typeof req)
     console.log(isValidJson(req));
+    */
     res.send("DEEZ NUTS");
 });
 module.exports = router;
