@@ -32,6 +32,7 @@ router.post('/info', function(req, res, next) {
   db.get('cities')
   .find({name:city})
   .value()['people'].push({name:name})
+  console.log(db.get('cities').find({name:city}).value()['people'][0]);
   res.render('thanks');
 });
 
