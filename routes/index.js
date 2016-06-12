@@ -71,11 +71,14 @@ router.post('/info', function(req, res, next) {
 
 
 router.post('/moreInfo',function(req,res,next){
-    var donate = req.job;
-    var items = req.donationItems;
-    var canDropOff = req.canDropOff;
-    var needsPickup = req.needsPickup;
-    console.log(req);
-    res.send("oooookkkkkk");
+    var donate = req.body.job;
+    var items = req.body.donationItems;
+    var canDropOff = req.body.canDropOff;
+    var needsPickup = req.body.needsPickup;
+    console.log("donate"+donate);
+    console.log("items"+items)
+    console.log("canDrop"+canDropOff);
+    console.log("needsPickup"+needsPickup);
+    res.send("DEEZ NUTS");
 });
 module.exports = router;
