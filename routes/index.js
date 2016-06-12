@@ -85,9 +85,12 @@ router.post('/moreInfo',function(req,res,next){
 
 router.post('/sendInfo',function(req,res,next){
     var email = req.body.email;
+    console.log(email);
     var person = db.get('users')
     .find({email:email})
     .value();
+
+    console.log(person)
 
      var job = db.get('cities')
     .find({name:person['city']})
