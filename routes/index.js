@@ -75,6 +75,7 @@ router.post('/moreInfo',function(req,res,next){
     var items = req.donationItems;
     var canDropOff = req.canDropOff;
     var needsPickup = req.needsPickup;
+    console.log(req);
     res.send("oooookkkkkk");
 });
 module.exports = router;
