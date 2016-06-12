@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <title>HandsForRelief</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <style>
+      #map{
+        width:500px;
+        height:400px;
+        background-color: #CCC;
+      }
+    </style>
+    <script>
+      function initMap(){
+        console.log("nothing to see here");
+        $.ajax({
+          url:"http://api.rwlabs.org:80/v1/disasters?limit=1&fields%5Binclude%5D%5B%5D=country&sort%5B%5D=date%3Adesc",
+          data:{
+            "sort":["date:desc"],
+            "fields":{
+              "include":["country"]
+            }
+          },
+          type:"GET",
+          datetype:"json",
+        })
+        .done(function(json){
+            var location = json.data[0].fields.country[0].location;
+            var title = json.data[0].fields.name;
+            changeItUp(parseFloat(location[0]),parseFloat(location[1]),title);
+            addtheInfo(parseInt(json.data[0].id));
+        });
+      }
+
+      function addtheInfo(id){
+        console.log("lol")
+        $.ajax({
+          url:"http://api.rwlabs.org/v1/disasters/"+id,
+          type:"GET",
+          datatype:"json",
+        })
+        .done(function(json){
+          $(".disaster-info").append(json.data[0].fields['description-html']);
+        });
+      }
+
+      function changeItUp(lati,long,title){
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: long, lng: lati},
+          zoom: 4
+        });
+        var ll = {lat:lati,lng:long};
+        var marker = new google.maps.Marker({
+          position: {lat:long,lng:lati},
+          map:map,
+          title: title
+        });
+      }
+    </script>
+    <style>
+      #map{
+        margin-left: 35vh;
+      }
+
+      #contact{
+        margin-top: 5vh;
+        margin-left:60vh;
+        margin-bottom: 5vh;
+      }
+    </style>
+  </head>
+  <body class="amber lighten-5">
+    <nav class="blue">
+      <div class="navbar-wrapper">
+        <a href="#" class="brand-logo" style="padding-left:10px">HandsForRelief</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="about">About</a></li>
+          <li><a href="contact" >Sign Up</a></li>
+          <li><a href="disasters">Disasters</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h2 class="center-align">Here's where we are working right now:</h2>
+      <div id="map" class="center-align"></div>
+      <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+      <div class="disaster-info">
+
+      </div>
+      <a id="contact" href="contact" class="waves-effect waves-light btn animated">Help Out</a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+{
+  "users": [
+    {
+      "name": "HKSK",
+      "phone": "",
+      "city": "union city",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "gagan",
+      "phone": "",
+      "city": "union city",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    },
+    {
+      "name": "",
+      "phone": "",
+      "city": "",
+      "address": "",
+      "email": "",
+      "fb": ""
+    }
+  ],
+  "cities": [
+    {
+      "name": "union city",
+      "people": [
+        {
+          "name": "HKSK"
+        },
+        {
+          "name": "gagan"
+        }
+      ]
+    },
+    {
+      "name": "union city",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": [
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        },
+        {
+          "name": ""
+        }
+      ]
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    },
+    {
+      "name": "",
+      "people": []
+    }
+  ]
+}
