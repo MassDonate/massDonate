@@ -6,7 +6,7 @@ var request = require('request');
 /* GET home page. */
 var bool = false;
 var newestDisaster= "asd"
-setInterval(poll()) }
+setInterval(poll() 
 
 , 300000);
 
