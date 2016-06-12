@@ -17,13 +17,23 @@ router.post('/info', function(req, res, next) {
   var phone = req.body.phone;
   var address = req.body.address;
   var email = req.body.email;
-  var fb = req.body.fb; 
-  db.defaults({ users: [] })
+  var fb = req.body.fb;
+  var city = req.body.city; 
+  db.defaults({ users: [], cities: [] })
   .value()
   
   db.get('users')
-  .push({ name: name, phone: phone, address: address, email: email, fb:fb})
+  .push({ name: name, phone: phone,city:city, address: address, email: email, fb:fb})
   .value()
+   
+  db.get('cities')
+  .push({name:city,people:[]})
+  .value()
+ 
+  db.get('cities')
+  .find({name:city})
+  .value()['people'].push({name:name})
+  
 
     
 
