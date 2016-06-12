@@ -77,7 +77,7 @@ router.post('/moreInfo',function(req,res,next){
 
     db.get('cities')
     .find({name:person['city']})
-    .value()['people'].push({name:name,donate:donate,address,person['address']})
+    .value()['people'].push({name:name,donate:donate,address:person['address']})
     console.log(db.get('cities').find({name:city}).value()['people'][0]);
 
     res.send("success");
@@ -90,7 +90,7 @@ router.post('/sendInfo',function(req,res,next){
     .value();
 
      var job = db.get('cities')
-    .find({name:person['city'})
+    .find({name:person['city']})
     .value()['people'].find({name:person['name']})['donate']
  console.log(db.get('cities').find({name:city}).value()['people'][0].find({name:name})['donate'][0]);
 
