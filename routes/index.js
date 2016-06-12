@@ -44,4 +44,10 @@ router.post('/info', function(req, res, next) {
   res.render('thanks');
 });
 
+
+router.post('/moreInfo',function(req,res,next){
+    console.log(req.body);
+
+
+});
 module.exports = router;
