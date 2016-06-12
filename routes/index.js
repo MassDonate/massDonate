@@ -79,6 +79,7 @@ router.post('/moreInfo',function(req,res,next){
     console.log("items"+items)
     console.log("canDrop"+canDropOff);
     console.log("needsPickup"+needsPickup);
+    console.log(req);
     res.send("DEEZ NUTS");
 });
 module.exports = router;
