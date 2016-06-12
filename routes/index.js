@@ -32,9 +32,7 @@ router.post('/info', function(req, res, next) {
   db.get('cities')
   .find({name:city})
   .value()['people'].push({name:name})
-  
   res.render('thanks');
 });
 
 module.exports = router;
-
