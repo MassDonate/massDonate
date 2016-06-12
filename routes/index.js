@@ -68,9 +68,11 @@ router.post('/info', function(req, res, next) {
 
 router.post('/moreInfo',function(req,res,next){
     console.log(req.body)
+    var string = req.body.toString();
+     string = string.substring(string.indexOf("{"),string.lastIndexOf(":")-1);
 
-    var donate = req.body.job;
-    var email = req.body.email;
+    var donate = string.job;
+    var email = string.email;
     console.log(email)
     var person = db.get('users')
     .find({email:email})
